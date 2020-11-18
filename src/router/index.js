@@ -12,7 +12,7 @@ const routes = [
       {
         name: "Main",
         path: "",
-        component: () => import(/* webpackChunkName: "main" */ "../views/Main")
+        component: () => import(/* webpackChunkName: "main" */ "../views/main")
       }
     ]
   },
@@ -27,7 +27,7 @@ const routes = [
         name: "About",
         path: "",
         component: () =>
-          import(/* webpackChunkName: "about" */ "../views/About")
+          import(/* webpackChunkName: "about" */ "../views/about")
       }
     ]
   }
