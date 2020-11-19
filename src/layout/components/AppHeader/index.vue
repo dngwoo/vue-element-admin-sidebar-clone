@@ -30,7 +30,7 @@ export default {
   methods: {
     ...mapMutations(["TOGGLE_SIDEBAR"]),
     toggleSideBar() {
-      this.TOGGLE_SIDEBAR(); // sidebar.opened 값 바꾸는 mutation
+      this.TOGGLE_SIDEBAR(); // sidebar.opened 값을 바꿔주는 mutation
     }
   }
 };
