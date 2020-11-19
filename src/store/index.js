@@ -6,6 +6,7 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
+    // app
     sidebar: {
       // * +는 숫자형으로 변환을 의미
       opened: Cookies.get("sidebarStatus")
@@ -25,6 +26,7 @@ const store = new Vuex.Store({
   },
 
   mutations: {
+    // app
     TOGGLE_SIDEBAR: state => {
       state.sidebar.opened = !state.sidebar.opened;
       state.sidebar.withoutAnimation = false;
