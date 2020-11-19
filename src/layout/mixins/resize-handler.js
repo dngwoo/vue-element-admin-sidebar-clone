@@ -1,4 +1,3 @@
-import store from "@/store";
 import { mapMutations } from "vuex";
 
 const { body } = document;
@@ -12,7 +11,7 @@ export default {
       // * device가 모바일이고 sidebar가 오픈되어있다면 닫는 로직이다.
       // * device와 sidebar는 single file component에서 정의해준 값이다.(getters에서 가져옴)
       if (this.device === "mobile" && this.sidebar.opened) {
-        store.dispatch("closeSideBar", { withoutAnimation: false });
+        this.CLOSE_SIDEBAR({ withoutAnimation: false });
       }
     }
   },
