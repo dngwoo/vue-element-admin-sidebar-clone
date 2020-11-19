@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header__left-menu">
-      <div class="header__menu-item">hambuger</div>
+      <hambuger :is-active="sidebar.opened"></hambuger>
       <div class="header__menu-item">
         breadcrumb
       </div>
@@ -15,8 +15,15 @@
 </template>
 
 <script>
+import Hambuger from "@/layout/components/AppHeader/Hambuger";
+import { mapGetters } from "vuex";
 export default {
-  methods: {}
+  components: {
+    Hambuger
+  },
+  computed: {
+    ...mapGetters(["sidebar", "device"])
+  }
 };
 </script>
 
