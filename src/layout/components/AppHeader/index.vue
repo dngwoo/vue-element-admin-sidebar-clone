@@ -1,7 +1,10 @@
 <template>
   <div class="header">
     <div class="header__left-menu">
-      <hambuger :is-active="sidebar.opened"></hambuger>
+      <hambuger
+        :is-active="sidebar.opened"
+        @toggleClick="toggleSideBar"
+      ></hambuger>
       <div class="header__menu-item">
         breadcrumb
       </div>
@@ -16,13 +19,19 @@
 
 <script>
 import Hambuger from "@/layout/components/AppHeader/Hambuger";
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 export default {
   components: {
     Hambuger
   },
   computed: {
     ...mapGetters(["sidebar", "device"])
+  },
+  methods: {
+    ...mapMutations(["TOGGLE_SIDEBAR"]),
+    toggleSideBar() {
+      this.TOGGLE_SIDEBAR(); // sidebar.opened 값 바꾸는 mutation
+    }
   }
 };
 </script>
